@@ -1,12 +1,11 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
 
-/** Health / test */
+const router = Router();
+
 router.get('/', (req, res) => {
     return res.json({ message: 'device router works' });
 });
 
-/** Create device (example) */
 router.post('/create', (req, res) => {
     return res.status(201).json({
         message: 'device created',
@@ -14,16 +13,13 @@ router.post('/create', (req, res) => {
     });
 });
 
-/** Get all devices (example) */
 router.get('/list', (req, res) => {
-    // later you can fetch from DB
     return res.json({
         message: 'devices list',
         items: []
     });
 });
 
-/** Get one device by id (example) */
 router.get('/:id', (req, res) => {
     const { id } = req.params;
 
@@ -33,4 +29,4 @@ router.get('/:id', (req, res) => {
     });
 });
 
-module.exports = router;
+export default router;

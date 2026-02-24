@@ -1,12 +1,13 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+
+const router = Router();
 
 router.post('/', (req, res) => {
-    res.json({ message: 'type created' });
+    return res.json({ message: 'type created' });
 });
 
 router.get('/', (req, res) => {
-    res.json({ message: 'type list' });
+    return res.json({ message: 'type list' });
 });
 
-module.exports = router;
+export default router;
